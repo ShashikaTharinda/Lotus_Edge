@@ -9,9 +9,11 @@
 LOTUS EDGE - Restaurant & Lounge, Matale
 One static HTML file. No build step, no dependencies.
 
-PALETTE comes from the real signboard photographed on site: deep slate
-board, white type, geometric lotus mark. Warmth comes from the photography,
-not from the interface.
+PALETTE is the venue after dark: warm near-black ground, sand white type,
+amber accent matched to the festoon lights in the garden. STRUCTURE comes
+from the signboard: wide tracking, the stacked Lotus / Edge lockup, thin
+rules. The cool slate version of this palette was tried and rejected, it
+desaturated the green photography and read dull against it.
 
 DEMO CONTENT. Replace before launch:
   SAMPLE PRICES  every number in the menu is invented for this design review
@@ -40,7 +42,7 @@ DEMO CONTENT. Replace before launch:
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#161B21">
+<meta name="theme-color" content="#12140F">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -57,19 +59,19 @@ DEMO CONTENT. Replace before launch:
    accent and appears only where something is clickable.
    ============================================================= */
 :root{
-  --slate-900:#161B21;
-  --slate-850:#1B2027;
-  --slate-800:#222933;
-  --slate-700:#2E3742;
-  --slate-600:#3F4A58;
+  --slate-900:#12140F;
+  --slate-850:#1A1D16;
+  --slate-800:#20241B;
+  --slate-700:#2A2F22;
+  --slate-600:#3B412F;
 
-  --white-50:#F4F7F9;
-  --white-200:#D7DEE5;
-  --muted:#A8B2BE;
+  --white-50:#F7F1E6;
+  --white-200:#E3D7C2;
+  --muted:#C4BAA8;
 
-  --gold-300:#E0C795;
-  --gold-400:#CFAE72;
-  --leaf-400:#7FAE8E;
+  --gold-300:#F0B357;
+  --gold-400:#E29B33;
+  --leaf-400:#6FA982;
 
   --ink:var(--white-50);
   --accent:var(--gold-300);
@@ -140,7 +142,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold-300);outline-o
 .btn:hover{transform:translateY(-2px)}
 .btn-primary{background:var(--gold-300);color:var(--slate-900)}
 .btn-primary:hover{background:var(--gold-400)}
-.btn-ghost{border-color:var(--slate-600);color:var(--ink);background:rgba(22,27,33,.4)}
+.btn-ghost{border-color:var(--slate-600);color:var(--ink);background:rgba(18,20,15,.4)}
 .btn-ghost:hover{border-color:var(--gold-300);color:var(--gold-300)}
 
 /* ---------- header ---------- */
@@ -148,7 +150,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold-300);outline-o
   position:sticky;top:0;z-index:40;background:transparent;border-bottom:1px solid transparent;
   transition:background .35s var(--ease),border-color .35s var(--ease);
 }
-.site-header.stuck{background:rgba(22,27,33,.94);backdrop-filter:blur(12px);border-bottom-color:var(--slate-700)}
+.site-header.stuck{background:rgba(18,20,15,.94);backdrop-filter:blur(12px);border-bottom-color:var(--slate-700)}
 .site-header .wrap{display:flex;align-items:center;justify-content:space-between;min-height:64px;gap:var(--s-2)}
 @media(min-width:768px){.site-header .wrap{min-height:76px}}
 
@@ -170,7 +172,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold-300);outline-o
 .mode{
   display:inline-flex;align-items:center;gap:7px;min-height:var(--tap);
   padding:0 var(--s-3);border-radius:2px;border:1px solid var(--slate-600);
-  background:rgba(22,27,33,.45);color:var(--ink);cursor:pointer;font:inherit;
+  background:rgba(18,20,15,.45);color:var(--ink);cursor:pointer;font:inherit;
   font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
 }
 .mode:hover{border-color:var(--gold-300);color:var(--gold-300)}
@@ -194,16 +196,16 @@ html[data-mode="day"]   .hero-media .d{opacity:1}
 .hero-scrim{
   position:absolute;inset:0;z-index:-1;
   background:
-    linear-gradient(180deg,rgba(22,27,33,.72) 0%,rgba(22,27,33,.30) 30%,rgba(22,27,33,.86) 72%,var(--slate-900) 100%),
-    linear-gradient(90deg,rgba(22,27,33,.7) 0%,transparent 62%);
+    linear-gradient(180deg,rgba(18,20,15,.66) 0%,rgba(18,20,15,.22) 30%,rgba(18,20,15,.84) 72%,var(--slate-900) 100%),
+    linear-gradient(90deg,rgba(18,20,15,.68) 0%,transparent 62%);
 }
 .lantern{position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:0;transition:opacity .6s var(--ease);
-  background:radial-gradient(340px 340px at var(--lx,50%) var(--ly,40%),rgba(224,199,149,.16),transparent 70%)}
+  background:radial-gradient(340px 340px at var(--lx,50%) var(--ly,40%),rgba(240,179,87,.20),transparent 70%)}
 @media(pointer:fine){.hero:hover .lantern{opacity:1}}
 
 .hero-inner{padding-block:var(--s-6) calc(var(--s-5) + var(--bar));position:relative}
 @media(min-width:900px){.hero-inner{padding-bottom:var(--s-7)}}
-.hero h1{font-size:var(--step-4);max-width:16ch;font-weight:300;letter-spacing:.01em}
+.hero h1{font-size:var(--step-4);max-width:16ch;font-weight:400;letter-spacing:.01em}
 @media(min-width:768px){.hero h1{font-size:var(--step-5)}}
 .hero .lede{margin-top:var(--s-3);font-size:var(--step-0)}
 @media(min-width:768px){.hero .lede{font-size:var(--step-1)}}
@@ -213,7 +215,7 @@ html[data-mode="day"]   .hero-media .d{opacity:1}
 
 .badge{
   display:inline-flex;align-items:center;gap:var(--s-2);
-  border:1px solid var(--gold-400);color:var(--gold-300);background:rgba(207,174,114,.1);
+  border:1px solid var(--gold-400);color:var(--gold-300);background:rgba(240,179,87,.13);
   padding:7px var(--s-3);font-size:.68rem;font-weight:600;letter-spacing:.18em;
   text-transform:uppercase;margin-bottom:var(--s-4);border-radius:2px;
 }
@@ -221,7 +223,7 @@ html[data-mode="day"]   .hero-media .d{opacity:1}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
 
 .count{display:flex;gap:var(--s-5);margin-top:var(--s-5)}
-.count b{display:block;font-family:var(--font-display);font-size:2.2rem;font-weight:300;line-height:1;font-variant-numeric:lining-nums tabular-nums;font-feature-settings:"lnum" 1}
+.count b{display:block;font-family:var(--font-display);font-size:2.2rem;font-weight:500;line-height:1;font-variant-numeric:lining-nums tabular-nums;font-feature-settings:"lnum" 1}
 .count span{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
 html:not(.js) .count{display:none}
 
@@ -247,7 +249,7 @@ html:not(.js) .count{display:none}
 
 /* ---------- menu ---------- */
 .pricebar{
-  display:block;background:rgba(207,174,114,.09);border:1px solid var(--gold-400);
+  display:block;background:rgba(240,179,87,.10);border:1px solid var(--gold-400);
   border-radius:var(--radius);padding:var(--s-3) var(--s-4);
   color:var(--white-200);font-size:var(--step--1);margin-block:var(--s-4) var(--s-5);line-height:1.55;
 }
@@ -278,7 +280,7 @@ html:not(.js) .count{display:none}
 .portions{display:flex;gap:var(--s-3);font-size:.62rem;color:var(--muted);letter-spacing:.16em;text-transform:uppercase;flex:none}
 .portions span{width:60px;text-align:right}
 
-.dish{display:grid;grid-template-columns:1fr auto;gap:2px var(--s-3);padding:var(--s-2) 0;border-bottom:1px solid rgba(46,55,66,.55)}
+.dish{display:grid;grid-template-columns:1fr auto;gap:2px var(--s-3);padding:var(--s-2) 0;border-bottom:1px solid rgba(59,65,47,.55)}
 .dish:last-child{border-bottom:0}
 .dish-name{font-weight:500;font-size:var(--step-0)}
 .dish-desc{grid-column:1/2;color:var(--muted);font-size:var(--step--1);line-height:1.5}
@@ -303,7 +305,7 @@ html:not(.js) .count{display:none}
 /* ---------- book ---------- */
 .book{background:var(--slate-850);border:1px solid var(--slate-700);border-radius:var(--radius);padding:var(--s-5);position:relative;overflow:hidden}
 @media(min-width:768px){.book{padding:var(--s-7)}}
-.book::before{content:"";position:absolute;inset:-45% -12% auto auto;width:400px;height:400px;background:radial-gradient(circle,rgba(207,174,114,.12),transparent 66%);pointer-events:none}
+.book::before{content:"";position:absolute;inset:-45% -12% auto auto;width:400px;height:400px;background:radial-gradient(circle,rgba(240,179,87,.14),transparent 66%);pointer-events:none}
 
 /* ---------- footer ---------- */
 .site-footer{border-top:1px solid var(--slate-700);padding-block:var(--s-5);color:var(--muted);font-size:var(--step--1)}
