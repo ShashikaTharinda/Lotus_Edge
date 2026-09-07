@@ -24,10 +24,13 @@ Everything below is demo or placeholder. The full list is in the comment block a
 top of `index.html`.
 
 - [ ] Replace `images/*.jpg` with real venue photos, same filenames
-- [ ] Replace the inline SVG logo (search `DEMO LOGO`)
+- [ ] Replace the inline SVG logo. It is redrawn by eye from a photo of the
+      signboard, not the real vector. Ask the sign maker for the AI or SVG file.
 - [ ] Real phone and WhatsApp number (search `770000000`)
 - [ ] `FILL_ADDRESS`, `FILL_MAPS_URL`, `FILL_HOURS`, `FILL_DOMAIN`
-- [ ] Menu prices, every `<span class="price">` is empty on purpose
+- [ ] **Menu prices are SAMPLE numbers.** They exist so the layout can be judged
+      with real content in it. The page says so in a gold notice above the menu.
+      Replace them all with the kitchen's real list before this is public.
 - [ ] Drinks list, the bar section has categories only
 - [ ] Social links in the footer
 - [ ] Fill and uncomment the JSON-LD block at the end of `<head>`.
@@ -35,8 +38,13 @@ top of `index.html`.
 
 Photos are Unsplash stock placeholders.
 
+## Hosting
+
+Static. Vercel with no build command and no output directory. `vercel.json` sets
+long cache on `/images` and basic security headers.
+
 ## Verified
 
-375px and 1280px, no horizontal scroll. Contrast 9.66:1 body, 9.97:1 on buttons.
+375px and 1280px, no horizontal scroll. Contrast 8.06:1 muted body, 10.53:1 on buttons, 16.09:1 white on ground.
 Body text 16px. No tap target under 44px. One `h1`. Title 42 chars, meta description
 126 chars.
