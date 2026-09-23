@@ -21,7 +21,7 @@ in the venue photos. No menu, price, phone, hours or cuisine claim ships
 until it is real. Three commented slots take them when they arrive:
   DIRECTIONS SLOT   one href, needs the venue's GPS pin
   PHONE SLOT A/B/C  one block and two hrefs
-  MENU SLOT         paste the menu section, CSS is already in place
+  MENU              filled 2026-09-23 without prices (add .dish-prices spans if prices go public)
 Exact snippets for each live in Projects/LotusEdge/00-DISCOVERY.md,
 "Handover". Add telephone to the JSON-LD at the same time as the phone.
 
@@ -272,6 +272,9 @@ html[data-mode="day"]   .hero-media .d{opacity:1}
 .dish-desc{grid-column:1/2;color:var(--muted);font-size:var(--step-0);line-height:1.5}
 .dish-prices{display:flex;gap:var(--s-3);align-items:baseline}
 .price{width:60px;text-align:right;color:var(--gold-300);font-variant-numeric:lining-nums tabular-nums;font-weight:500}
+.dishes{list-style:none;margin:0;padding:0}
+.dish-desc{display:block}
+.course-note{color:var(--muted);font-size:var(--step-0);margin-bottom:var(--s-1)}
 
 /* ---------- find us ---------- */
 .facts{display:grid;gap:var(--s-5);margin-top:var(--s-5)}
@@ -317,6 +320,7 @@ html[data-mode="day"]   .hero-media .d{opacity:1}
   "url":"https://lotusedge.lk/",
   "image":"https://lotusedge.lk/images/og-lotus-edge.jpg",
   "logo":"https://lotusedge.lk/images/icon-512.png",
+  "hasMenu":"https://lotusedge.lk/#menu",
   "address":{
     "@type":"PostalAddress",
     "streetAddress":"25/1 Kirigalpotta, Palapathwala",
@@ -342,7 +346,7 @@ html[data-mode="day"]   .hero-media .d{opacity:1}
     </a>
     <nav class="nav" aria-label="Primary">
       <a href="#venue">The Garden</a>
-      <!-- MENU SLOT (nav): <a href="#menu">Menu</a> -->
+      <a href="#menu">Menu</a>
       <a href="#visit">Find Us</a>
     </nav>
   </div>
@@ -369,7 +373,7 @@ html[data-mode="day"]   .hero-media .d{opacity:1}
       <p class="lede" data-reveal style="--i:2">Thatched cabanas, amber lights strung between the coconut palms, and lit paths across the lawn. We're open at Palapathwala, Matale.</p>
       <div class="hero-actions" data-reveal style="--i:3">
         <a class="btn btn-primary" href="#visit">Find us</a>
-        <a class="btn btn-ghost" href="https://www.instagram.com/lotus__edge">See us on Instagram</a>
+        <a class="btn btn-ghost" href="#menu">See the menu</a>
       </div>
     </div>
   </section>
@@ -406,10 +410,119 @@ html[data-mode="day"]   .hero-media .d{opacity:1}
     </div>
   </section>
 
-  <!-- MENU SLOT. Paste the menu <section id="menu"> here. Structure and
-       styles (.menu-nav, .menu-grid, .course, .dish, .price) are already in
-       this file and the scroll spy script picks it up automatically.
-       Snippet: 00-DISCOVERY.md, Handover. -->
+  <!-- MENU. From "LOTUS EDGE menu.pdf", 2026-09-23. Prices deliberately absent:
+       they may change, so they stay at the venue. -->
+  <section class="section" id="menu" style="background:var(--slate-850)">
+    <div class="wrap">
+      <p class="eyebrow" data-reveal>Menu</p>
+      <h2 class="h-sec" data-reveal style="--i:1">From the kitchen</h2>
+      <p class="lede" style="margin-top:var(--s-3);--i:2" data-reveal>Fried rice, noodles, kottu, devilled dishes and more. Prices at the venue.</p>
+
+      <nav class="menu-nav" id="menuNav" aria-label="Menu sections">
+        <a href="#m-rice">Fried Rice</a>
+        <a href="#m-noodles">Noodles</a>
+        <a href="#m-kottu">Kottu Roti</a>
+        <a href="#m-sh">String Hopper Kottu</a>
+        <a href="#m-cheese">Cheese Kottu</a>
+        <a href="#m-special">Special</a>
+        <a href="#m-devilled">Devilled</a>
+        <a href="#m-stew">Stew</a>
+        <a href="#m-fried">Fried</a>
+      </nav>
+
+      <div class="menu-grid">
+        <div class="course" id="m-rice" data-reveal>
+          <div class="course-head"><h3>Fried Rice</h3></div>
+          <p class="course-note">Regular and full portions</p>
+          <ul class="dishes">
+            <li class="dish"><span class="dish-name">Chicken</span><span class="dish-desc">Served with chilli paste and gravy</span></li>
+            <li class="dish"><span class="dish-name">Egg</span><span class="dish-desc">Served with chilli paste and gravy</span></li>
+            <li class="dish"><span class="dish-name">Seafood Mix</span><span class="dish-desc">Prawns, fish and cuttlefish</span></li>
+            <li class="dish"><span class="dish-name">Mix</span><span class="dish-desc">Chicken, sausages, prawns, fish and cuttlefish</span></li>
+            <li class="dish"><span class="dish-name">Mix, Beef or Pork</span><span class="dish-desc">Chicken, sausages, prawns, fish, cuttlefish and a choice of beef or pork</span></li>
+          </ul>
+        </div>
+        <div class="course" id="m-noodles" data-reveal>
+          <div class="course-head"><h3>Noodles</h3></div>
+          <p class="course-note">Regular and full portions</p>
+          <ul class="dishes">
+            <li class="dish"><span class="dish-name">Chicken</span><span class="dish-desc">Served with chilli paste and gravy</span></li>
+            <li class="dish"><span class="dish-name">Egg</span><span class="dish-desc">Served with chilli paste and gravy</span></li>
+            <li class="dish"><span class="dish-name">Seafood Mix</span><span class="dish-desc">Prawns, fish and cuttlefish</span></li>
+            <li class="dish"><span class="dish-name">Mix</span><span class="dish-desc">Chicken, sausages, prawns, fish and cuttlefish</span></li>
+            <li class="dish"><span class="dish-name">Mix, Beef or Pork</span><span class="dish-desc">Chicken, sausages, prawns, fish, cuttlefish and a choice of beef or pork</span></li>
+          </ul>
+        </div>
+        <div class="course" id="m-kottu" data-reveal>
+          <div class="course-head"><h3>Kottu Roti</h3></div>
+          <p class="course-note">Regular and full portions</p>
+          <ul class="dishes">
+            <li class="dish"><span class="dish-name">Chicken</span><span class="dish-desc">Served with chilli paste and gravy</span></li>
+            <li class="dish"><span class="dish-name">Egg</span><span class="dish-desc">Served with chilli paste and gravy</span></li>
+            <li class="dish"><span class="dish-name">Beef</span><span class="dish-desc">Served with chilli paste and gravy</span></li>
+          </ul>
+        </div>
+        <div class="course" id="m-sh" data-reveal>
+          <div class="course-head"><h3>String Hopper Kottu</h3></div>
+          <p class="course-note">Regular and full portions</p>
+          <ul class="dishes">
+            <li class="dish"><span class="dish-name">Chicken</span><span class="dish-desc">Served with chilli paste and gravy</span></li>
+            <li class="dish"><span class="dish-name">Egg</span><span class="dish-desc">Served with chilli paste and gravy</span></li>
+            <li class="dish"><span class="dish-name">Beef</span><span class="dish-desc">Served with chilli paste and gravy</span></li>
+          </ul>
+        </div>
+        <div class="course" id="m-cheese" data-reveal>
+          <div class="course-head"><h3>Cheese Kottu</h3></div>
+          <p class="course-note">Regular and full portions</p>
+          <ul class="dishes">
+            <li class="dish"><span class="dish-name">Chicken</span><span class="dish-desc">Served with chilli paste and gravy</span></li>
+            <li class="dish"><span class="dish-name">Authentic</span><span class="dish-desc">Served with chilli paste and gravy</span></li>
+          </ul>
+        </div>
+        <div class="course" id="m-special" data-reveal>
+          <div class="course-head"><h3>Special Dishes</h3></div>
+          <ul class="dishes">
+            <li class="dish"><span class="dish-name">Nasi Goreng</span><span class="dish-desc">Grilled chicken thigh, fried egg, vegetable salad and prawn crackers</span></li>
+            <li class="dish"><span class="dish-name">Mongolian Rice</span><span class="dish-desc">Grilled chicken thigh, fried egg, vegetable salad and prawn crackers</span></li>
+            <li class="dish"><span class="dish-name">Nai Miris Rice</span><span class="dish-desc">Chicken fried rice served with chilli paste and gravy</span></li>
+          </ul>
+        </div>
+        <div class="course" id="m-devilled" data-reveal>
+          <div class="course-head"><h3>Devilled Dishes</h3></div>
+          <ul class="dishes">
+            <li class="dish"><span class="dish-name">Chicken</span></li>
+            <li class="dish"><span class="dish-name">Fish</span></li>
+            <li class="dish"><span class="dish-name">Sausage</span></li>
+            <li class="dish"><span class="dish-name">Beef</span></li>
+            <li class="dish"><span class="dish-name">Pork</span></li>
+            <li class="dish"><span class="dish-name">Gizzard</span></li>
+          </ul>
+        </div>
+        <div class="course" id="m-stew" data-reveal>
+          <div class="course-head"><h3>Stew</h3></div>
+          <ul class="dishes">
+            <li class="dish"><span class="dish-name">Chicken</span></li>
+            <li class="dish"><span class="dish-name">Fish</span></li>
+            <li class="dish"><span class="dish-name">Gizzard</span></li>
+            <li class="dish"><span class="dish-name">Beef</span></li>
+            <li class="dish"><span class="dish-name">Pork</span></li>
+          </ul>
+        </div>
+        <div class="course" id="m-fried" data-reveal>
+          <div class="course-head"><h3>Fried</h3></div>
+          <ul class="dishes">
+            <li class="dish"><span class="dish-name">Chicken</span></li>
+            <li class="dish"><span class="dish-name">Fish</span></li>
+            <li class="dish"><span class="dish-name">Gizzard</span></li>
+            <li class="dish"><span class="dish-name">Beef</span></li>
+            <li class="dish"><span class="dish-name">Pork</span></li>
+            <li class="dish"><span class="dish-name">Sausage</span></li>
+            <li class="dish"><span class="dish-name">French Fries</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <section class="section" id="visit">
     <div class="wrap">
