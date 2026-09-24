@@ -58,7 +58,7 @@ Add-ons,addon-pol-sambol,Pol Sambol,,40,,TRUE,TRUE,,,
 Add-ons,addon-dhal-curry,Dhal Curry,,80,,TRUE,TRUE,,,
 Add-ons,addon-chicken-curry,Chicken Curry,,200,,TRUE,TRUE,,,
 Add-ons,addon-fish-curry,Fish Curry,,240,,TRUE,TRUE,,,
-Add-ons,addon-white-curry,White Curry,,230,,TRUE,FALSE,,,Hidden until the client confirms what White Curry is
+Add-ons,addon-fish-white-curry,Fish White Curry,,230,,TRUE,TRUE,,,
 Add-ons,addon-fried-fish,Fried Fish,,250,,TRUE,TRUE,,,
 Add-ons,addon-string-hoppers,String Hoppers,10 pieces,110,,TRUE,TRUE,,,
 Add-ons,addon-hopper,Hopper,,30,,TRUE,TRUE,,,
