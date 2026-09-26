@@ -52,11 +52,8 @@ shot. Code path kept, see DAY_PHOTO in the script.
 
 <link rel="preload" as="image" imagesrcset="images/hero-750.webp 750w, images/hero-1125.webp 1125w" imagesizes="100vw" media="(max-width:719px)" fetchpriority="high">
 <link rel="preload" as="image" href="images/hero-wide.webp" media="(min-width:720px)" fetchpriority="high">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!-- Fonts load without blocking first paint. The hero photo is the LCP and must not wait on a third-party stylesheet. -->
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&amp;family=Inter:wght@400;500;600&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&amp;family=Inter:wght@400;500;600&amp;display=swap"></noscript>
+<link rel="preload" as="font" type="font/woff2" href="/fonts/inter-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/fonts/cormorant-garamond-latin.woff2" crossorigin>
 
 <script>document.documentElement.classList.add("js")</script>
 
