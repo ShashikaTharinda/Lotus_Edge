@@ -21,9 +21,9 @@ function item(it, cat) {
     : priceCell(it.price, "Price");
   return `
           <li class="dish${it.available ? "" : " sold"}">
-            <div class="dish-main"><span class="dish-name">${esc(it.name)}</span>${it.available ? "" : `<span class="soldout">Sold out</span>`}${it.description ? `<span class="dish-desc">${esc(it.description)}</span>` : ""}</div>
-${prices ? `
-            <div class="dish-prices">${prices}</div>` : ""}
+            <div class="dish-main"><span class="dish-name">${esc(it.name)}</span>${it.available ? "" : `<span class="soldout">Sold out</span>`}</div>${prices ? `
+            <div class="dish-prices">${prices}</div>` : ""}${it.description ? `
+            <p class="dish-desc">${esc(it.description)}</p>` : ""}
           </li>`;
 }
 
@@ -66,7 +66,7 @@ function renderPage(menu) {
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&amp;family=Inter:wght@400;500;600&amp;display=swap"></noscript>
 <link rel="stylesheet" href="/site.css">
 </head>
-<body>
+<body class="menu-body">
 <a class="skip" href="#main">Skip to the menu</a>
 
 <header class="site-header stuck">

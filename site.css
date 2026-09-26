@@ -256,3 +256,22 @@ html[data-mode="day"]   .hero-media .d{opacity:1}
 .dish.sold .price{text-decoration:line-through}
 .soldout{display:inline-block;margin-left:var(--s-1);font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--white-200);border:1px solid var(--slate-600);border-radius:2px;padding:0 6px;vertical-align:2px;white-space:nowrap}
 .menu-foot{margin-top:var(--s-6);display:flex;flex-wrap:wrap;gap:var(--s-2)}
+
+/* ---------- /menu, phone first: one hand, quick scanning ---------- */
+.menu-body .site-header{position:static}             /* only the section bar stays pinned */
+.menu-body .menu-page{padding-block:var(--s-3) var(--s-6)}
+.menu-body .menu-page h1{font-size:var(--step-3)}
+.menu-body .menu-page .lede{font-size:var(--step-0);margin-top:var(--s-1)}
+.menu-body .notice{margin-top:var(--s-3)}
+.menu-body .menu-nav{top:0;padding-block:var(--s-1);margin-bottom:var(--s-2)}
+.menu-body .course{scroll-margin-top:72px}
+.menu-body .menu-grid{gap:var(--s-5)}
+.menu-body .dish{grid-template-columns:1fr auto;grid-template-areas:"name prices" "desc desc";align-items:baseline;padding-block:10px}
+.menu-body .dish-main{grid-area:name}
+.menu-body .dish-prices{grid-area:prices}
+.menu-body .dish-desc{grid-area:desc;margin:2px 0 0;line-height:1.45}
+@media(min-width:768px){
+  .menu-body .menu-page{padding-block:var(--s-5) var(--s-6)}
+  .menu-body .menu-page h1{font-size:var(--step-4)}
+  .menu-body .menu-grid{gap:var(--s-6) var(--s-6)}
+}
