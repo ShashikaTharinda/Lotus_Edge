@@ -266,8 +266,12 @@ html[data-mode="day"]   .hero-media .d{opacity:1}
 .menu-body .menu-nav{top:0;padding-block:var(--s-1);margin-bottom:var(--s-2)}
 .menu-body .course{scroll-margin-top:72px}
 .menu-body .menu-grid{gap:var(--s-5)}
-.menu-body .dish{grid-template-columns:1fr auto;grid-template-areas:"name prices" "desc desc";align-items:baseline;padding-block:10px}
-.menu-body .dish-main{grid-area:name}
+.menu-body .dish{grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"name prices" "desc .";column-gap:var(--s-3);align-items:baseline;padding-block:10px}
+.menu-body .dish-prices,.menu-body .portions{gap:var(--s-2)}
+.menu-body .price,.menu-body .portions span{width:3.4rem}  /* rem: grows with the phone's text size, so prices never spill */
+.menu-body .dish-main{grid-area:name;min-width:0;overflow-wrap:anywhere}
+.menu-body .course-head h2{min-width:0;overflow-wrap:anywhere}
+@media(max-width:767px){.menu-body .menu-grid{grid-template-columns:minmax(0,1fr)}}
 .menu-body .dish-prices{grid-area:prices}
 .menu-body .dish-desc{grid-area:desc;margin:2px 0 0;line-height:1.45}
 @media(min-width:768px){
