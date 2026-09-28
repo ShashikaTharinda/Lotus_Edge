@@ -123,8 +123,10 @@ test("load: a hung Google request times out instead of hanging the page", async 
   assert.ok(Date.now() - t0 < 6000);
 });
 
-test("sheet url: export CSV of the first tab, id encoded", () => {
+test("sheet url: export CSV of the first tab (no gid), id encoded, gid only if set", () => {
   assert.equal(m.sheetUrl({ MENU_SHEET_ID: "a/b" }),
-    "https://docs.google.com/spreadsheets/d/a%2Fb/export?format=csv&gid=0");
+    "https://docs.google.com/spreadsheets/d/a%2Fb/export?format=csv");
+  assert.equal(m.sheetUrl({ MENU_SHEET_ID: "x", MENU_SHEET_GID: "123" }),
+    "https://docs.google.com/spreadsheets/d/x/export?format=csv&gid=123");
   assert.equal(m.sheetUrl({}), null);
 });
