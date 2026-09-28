@@ -54,6 +54,16 @@ test("menu: bad rows are skipped with a warning, the rest survives", () => {
   assert.equal(menu.warnings.length, 4);
 });
 
+test("menu: unused rows holding only unticked checkboxes are ignored, not warned", () => {
+  const menu = m.buildMenu(m.parseCsv(csv(
+    "Lunch,l1,Chicken,,550,,TRUE,TRUE,,,",
+    ",,,,,,FALSE,FALSE,,,",
+    ",,,,,,FALSE,FALSE,,,",
+  )));
+  assert.equal(menu.categories[0].items.length, 1);
+  assert.equal(menu.warnings.length, 0);
+});
+
 test("menu: portion columns only where a Full price exists", () => {
   const menu = m.buildMenu(m.parseCsv(csv(
     "Fried Rice,fr-c,Chicken,,700,1150,,,,,",
