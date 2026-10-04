@@ -46,6 +46,10 @@
     "api/menu.js": {
       "includeFiles": "data/menu.csv",
       "maxDuration": 10
+    },
+    "api/reviews.js": {
+      "includeFiles": "data/reviews.csv",
+      "maxDuration": 10
     }
   },
   "rewrites": [
