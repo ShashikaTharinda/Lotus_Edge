@@ -107,6 +107,7 @@ function renderPage(menu) {
   </div>
 </footer>
 
+
 <script>
 /* Menu scroll spy, same behaviour as the home page. Only page with a menu nav now that the home page links here. */
 (function(){

@@ -299,3 +299,21 @@ html[data-mode="day"]   .hero-media .d{opacity:1}
 .map{margin-top:var(--s-5);border-radius:var(--radius);overflow:hidden;border:1px solid var(--slate-700);background:var(--slate-800)}
 .map iframe{display:block;width:100%;height:320px;border:0}
 @media(min-width:768px){.map iframe{height:380px}}
+
+/* ---------- floating WhatsApp button ---------- */
+/* #128C7E is WhatsApp's own dark green: icon 3.8:1 on it, button 4.5:1 on the page (the bright
+   #25D366 gives the white icon only 2:1). Two pulses then still: under 5 s, so no pause control needed. */
+:root{--whatsapp:#128C7E}
+.wa-fab{position:fixed;right:16px;bottom:calc(var(--bar) + 16px + env(safe-area-inset-bottom));z-index:60;width:56px;height:56px;border-radius:50%;
+  background:var(--whatsapp);color:var(--white-50);display:grid;place-items:center;isolation:isolate;
+  box-shadow:0 6px 18px rgba(0,0,0,.45);transition:transform .35s var(--ease),opacity .35s var(--ease),visibility .35s}
+.wa-fab svg{width:30px;height:30px}
+.wa-fab::before{content:"";position:absolute;inset:0;border-radius:50%;background:var(--whatsapp);z-index:-1;opacity:0}
+.fab-on .wa-fab::before{animation:wa-pulse 2s ease-out .5s 2}
+/* Phones: hidden until the visitor scrolls past the hero buttons, so it never sits on them. */
+@media(max-width:899px){html.js:not(.fab-on) .wa-fab{opacity:0;visibility:hidden;transform:translateY(24px) scale(.6)}}
+.wa-fab:hover{transform:scale(1.06)}
+.wa-fab:focus-visible{border-radius:50%;outline-offset:4px}
+@keyframes wa-pulse{0%{transform:scale(1);opacity:.55}100%{transform:scale(1.7);opacity:0}}
+@media(max-width:899px){body{padding-bottom:calc(var(--bar) + 88px)}}  /* footer clear of bar + button */
+@media(min-width:900px){.wa-fab{right:24px;bottom:24px}}
